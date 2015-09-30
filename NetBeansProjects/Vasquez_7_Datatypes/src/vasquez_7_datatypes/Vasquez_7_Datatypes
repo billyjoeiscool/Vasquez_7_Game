@@ -1,0 +1,37 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package vasquez_7_datatypes;
+
+/**
+ *
+ * @author billyjoel
+ */
+public class Vasquez_7_Datatypes {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+        //space for comments
+        //used to explain code
+        //code explaination is an expectashion
+        //in d22
+        int i =1;
+        float a = 2.5f;
+        double b = 3.87;
+        short c = 16;
+        char d1 = ';';
+        char d2 = 'a';
+        char d3 =42;
+        char d4 =145;
+        String e = d4+"";
+        String e1 = "Amanda is the best";
+        boolean f =
+        
+    }
+    
+}
