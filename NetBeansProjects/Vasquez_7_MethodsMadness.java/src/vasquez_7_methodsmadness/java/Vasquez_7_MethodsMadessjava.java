@@ -59,60 +59,34 @@ public class Vasquez_7_MethodsMadessjava extends Application {
         gc.setLineWidth(10);
         gc.strokeLine(300, 45, 10, 70);
         gc.fillOval(30, 80, 30, 30);
-        
-}
+        int i = 0;
+       
+
  
-    int i = 0;
-     int j =14;
-      int x = 10;
-      int y = 10;
-      int d= 10;
-
-    /**
-     *
-     * @param gc
-     * @param j
-     * @param x
-     * @param y
-     * @param d
-     */
-    public void drawcricle(GraphicsContext gc, int j,int x,int y,int d){
-        gc.setFill(Color.BLACK);
-        gc.setStroke(Color.RED);
-    for (i =0; i < 500; i++) {
-if (i % 2 ==0) {
+    
+     
+    
+        for (i =0; i < 51000; i++) {
+if (i/6==0){
+            
+   gc.setFill(Color.BLACK);   
+        gc.fillOval(100, 200, 100, 30);
    
-      }
+
     }
-    }  
-    public void DrawNecklace(GraphicsContext gc);
-            
+    }
+    }
+    public void M1(GraphicsContext gc ){
+        for (int i = 0; i < 500; i++) {
+        if (i / 10 == 0) {
+        gc.setFill(Color.CYAN);   
+            gc.fillOval(200, 200, 100, 100);
+        }
+        }
+    }
 }
-        
-          
 
-                
-                     
-                          
-        
-    
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
     
     
 
-
-
-                
-                     
-                          
-        
     
