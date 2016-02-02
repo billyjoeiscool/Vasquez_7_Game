@@ -1,4 +1,4 @@
-package slickexample;
+package steal;
 
 import org.newdawn.slick.state.*;
 
@@ -189,12 +189,13 @@ class player {
 
 }
 
-public class Unwavering extends BasicGameState {
+public class Stealer extends BasicGameState {
 
 	
 	public item healthpotion, healthpotion1;
 	public item1 speedpotion, speedpotion1;
 	public itemwin antidote;
+        public orb magic;
 
 	public ArrayList<item> stuff = new ArrayList();
 
@@ -233,7 +234,7 @@ public class Unwavering extends BasicGameState {
 
 	private static final int SCREEN_HEIGHT = 750;
 
-	public Unwavering(int xSize, int ySize) {
+	public Stealer(int xSize, int ySize) {
 
 	}
 
@@ -255,7 +256,7 @@ public class Unwavering extends BasicGameState {
 
 		// Ongoing checks are useful
 
-		System.out.println("Tile map is this wide: " + grassMap.getWidth());
+		//System.out.println("Tile map is this wide: " + grassMap.getWidth());
 
 		camera = new Camera(gc, grassMap);
 
@@ -400,8 +401,8 @@ public class Unwavering extends BasicGameState {
 		// System.out.println("Number of tile layers: "
 		// +grassMap.getLayerCount());
 
-		System.out.println("The grassmap is " + grassMap.getWidth() + "by "
-				+ grassMap.getHeight());
+		//System.out.println("The grassmap is " + grassMap.getWidth() + "by "
+		//		+ grassMap.getHeight());
 
 		for (int xAxis = 0; xAxis < grassMap.getWidth(); xAxis++) {
 
@@ -424,8 +425,8 @@ public class Unwavering extends BasicGameState {
 
 				if ("true".equals(value)) {
 
-					System.out.println("The tile at x " + xAxis + " andy axis "
-							+ yAxis + " is blocked.");
+				//	System.out.println("The tile at x " + xAxis + " andy axis "
+				//			+ yAxis + " is blocked.");
 
 					blocked.blocked[xAxis][yAxis] = true;
 
@@ -435,7 +436,7 @@ public class Unwavering extends BasicGameState {
 
 		}
 
-		System.out.println("Array length" + blocked.blocked[0].length);
+		//System.out.println("Array length" + blocked.blocked[0].length);
 
 		// A remarkably similar process for finding hostiles
 
@@ -475,7 +476,7 @@ public class Unwavering extends BasicGameState {
 		healthpotion1 = new item(450, 400);
 		stuff.add(healthpotion);
 		stuff.add(healthpotion1);
-		
+//		magic = new orb((int)Player.x + 5,(int) Player.y - 10);
 		speedpotion = new item1(100,150);
 		speedpotion1 = new item1(450,100);	
 		stuff1.add(speedpotion);
@@ -578,7 +579,6 @@ public class Unwavering extends BasicGameState {
 					(float) (player.x + SIZE + 1.5), player.y - fdelta))) {
 
 				sprite.update(delta);
-
 				// The lower the delta the slower the sprite will animate.
 
 				player.y -= fdelta;
@@ -602,13 +602,9 @@ public class Unwavering extends BasicGameState {
 		} else if (input.isKeyDown(Input.KEY_LEFT)) {
 
 			sprite = left;
-
 			if (!(isBlocked(player.x - fdelta, player.y) || isBlocked(player.x
-
 			- fdelta, player.y + SIZE - 1))) {
-
 				sprite.update(delta);
-
 				player.x -= fdelta;
 
 			}
@@ -631,7 +627,11 @@ public class Unwavering extends BasicGameState {
 
 			} // else { System.out.println("Right limit reached: " +
 				// rightlimit);}
-
+                }else if (input.isKeyDown(Input.KEY_SPACE)){
+                    magic.setIsVisible(true);
+                    //magic.setX(player.x);
+                   // magic.setY(player.y);
+                    //magic.setHittbox
 		}
 
 		player.rect.setLocation(player.getplayershitboxX(),
@@ -684,6 +684,9 @@ public class Unwavering extends BasicGameState {
 		}
 
 	}
+        //if (magic.setIsVisible()) {
+        //    magic.orbpic.draw(magic.getx(), magic.gety());
+        //}
 
 	public int getID() {
 

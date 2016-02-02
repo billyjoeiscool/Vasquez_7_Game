@@ -1,4 +1,4 @@
-package slickexample;
+package steal;
 
 
 import org.newdawn.slick.GameContainer;

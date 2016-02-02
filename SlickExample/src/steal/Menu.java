@@ -1,14 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package slickexample;
+package steal;
 
 
 import org.newdawn.slick.Color;
-
 import org.newdawn.slick.Image;
+
 
 import org.newdawn.slick.Game;
 
@@ -17,7 +12,6 @@ import org.newdawn.slick.GameContainer;
 
 
 import org.newdawn.slick.Graphics;
-import org.newdawn.slick.Image;
 
 
 import org.newdawn.slick.Input;
@@ -39,7 +33,7 @@ import org.newdawn.slick.state.transition.FadeOutTransition;
 
 
 
-public class win extends BasicGameState {
+public class Menu extends BasicGameState {
 
 
     
@@ -47,11 +41,11 @@ public class win extends BasicGameState {
 
     private StateBasedGame game;
 
-
+    public Image startimage;
     
 
 
-     public win(int xSize, int ySize) {
+     public Menu(int xSize, int ySize) {
 
 
 
@@ -65,14 +59,16 @@ public class win extends BasicGameState {
     public void init(GameContainer container, StateBasedGame game)
 
 
-           
-throws SlickException {
+            throws SlickException {
+    	
+    	startimage = new Image("res/MAIN.png");
+
 
         this.game = game;
 
 
 
-// TODO AutoÃ¢â‚¬Âgenerated method stub
+// TODO AutoÃ¢â‚¬Âgenerated method stub
 
 
     }
@@ -88,17 +84,26 @@ throws SlickException {
             throws SlickException {
 
 
-// TODO AutoÃ¢â‚¬Âgenerated method stub
+// TODO AutoÃ¢â‚¬Âgenerated method stub
+    	
+    	
 
 
         g.setColor(Color.white);
+        
+        startimage.draw();
+
+        //g.drawString("stuff", 300, 200);
+        
+        //g.drawString("collect the antidote before time runs out! red potions are health and yellow potions make you run faster", 50, 300);
 
 
-        g.drawString("You found the money in time!", 380, 200);
-        g.drawString("press 1 to play again", 400, 320);
+        //g.drawString("1. Play Game", 50, 100);
+
+        //g.drawString("2. High Scores(", 50, 120);
 
 
-       
+        //g.drawString("3. Quit", 50, 140);
 
 
     }
@@ -114,7 +119,7 @@ throws SlickException {
             throws SlickException {
 
 
-// TODO AutoÃ¢â‚¬Âgenerated method stub
+// TODO AutoÃ¢â‚¬Âgenerated method stub
 
 
     }
@@ -127,10 +132,10 @@ throws SlickException {
     public int getID() {
 
 
-// TODO AutoÃ¢â‚¬Âgenerated method stub
+// TODO AutoÃ¢â‚¬Âgenerated method stub
 
 
-        return 3;
+        return 0;
 
 
     }
@@ -148,16 +153,7 @@ throws SlickException {
 
             case Input.KEY_1:
 
-                Player.health  = 100000;
-                Player.speed = .4f;
-                Unwavering.counter = 0;
-                Player.x = 96f;
-                Player.y = 64f;
-                
-                
-                //item.isvisible = true;
-                //item1.isvisible = true;
-                itemwin.isvisible = true;
+
                 game.enterState(1, new FadeOutTransition(Color.black), new FadeInTransition(Color.black));
 
 
@@ -195,3 +191,4 @@ throws SlickException {
 
 
 }
+

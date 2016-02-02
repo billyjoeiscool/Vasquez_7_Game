@@ -1,9 +1,14 @@
-package slickexample;
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package steal;
 
 
 import org.newdawn.slick.Color;
-import org.newdawn.slick.Image;
 
+import org.newdawn.slick.Image;
 
 import org.newdawn.slick.Game;
 
@@ -12,6 +17,7 @@ import org.newdawn.slick.GameContainer;
 
 
 import org.newdawn.slick.Graphics;
+import org.newdawn.slick.Image;
 
 
 import org.newdawn.slick.Input;
@@ -33,19 +39,19 @@ import org.newdawn.slick.state.transition.FadeOutTransition;
 
 
 
-public class lose extends BasicGameState {
+public class win extends BasicGameState {
 
 
     
 
 
     private StateBasedGame game;
-    public Image startimage;
+
 
     
 
 
-     public lose(int xSize, int ySize) {
+     public win(int xSize, int ySize) {
 
 
 
@@ -59,15 +65,14 @@ public class lose extends BasicGameState {
     public void init(GameContainer container, StateBasedGame game)
 
 
-            throws SlickException {
-    	startimage = new Image("res/herol.png");
-
+           
+throws SlickException {
 
         this.game = game;
 
 
 
-// TODO AutoÃ¢â‚¬Âgenerated method stub
+// TODO AutoÃ¢â‚¬Âgenerated method stub
 
 
     }
@@ -81,19 +86,16 @@ public class lose extends BasicGameState {
 
 
             throws SlickException {
-    	
-    	startimage.draw();
 
 
-
-// TODO AutoÃ¢â‚¬Âgenerated method stub
+// TODO AutoÃ¢â‚¬Âgenerated method stub
 
 
         g.setColor(Color.white);
 
 
-        //g.drawString("You LOSE!", 450, 200);
-        g.drawString("you lost! restart game", 400, 320);
+        g.drawString("You found the money in time!", 380, 200);
+        g.drawString("press 1 to play again", 400, 320);
 
 
        
@@ -112,7 +114,7 @@ public class lose extends BasicGameState {
             throws SlickException {
 
 
-// TODO AutoÃ¢â‚¬Âgenerated method stub
+// TODO AutoÃ¢â‚¬Âgenerated method stub
 
 
     }
@@ -125,10 +127,10 @@ public class lose extends BasicGameState {
     public int getID() {
 
 
-// TODO AutoÃ¢â‚¬Âgenerated method stub
+//TODO AutoÃ¢â‚¬Âgenerated method stub
 
 
-        return 2;
+        return 3;
 
 
     }
@@ -146,13 +148,16 @@ public class lose extends BasicGameState {
 
             case Input.KEY_1:
 
-                Player.health  = 10000;
-                Player.speed = .7f;
-                Unwavering.counter = 0;
-                itemwin.isvisible = true;
+                Player.health  = 100000;
+                Player.speed = .4f;
+                Stealer.counter = 0;
                 Player.x = 96f;
-                Player.y = 65f;
-                //redo potions and reset cordinates of player
+                Player.y = 64f;
+                
+                
+                //item.isvisible = true;
+                //item1.isvisible = true;
+                itemwin.isvisible = true;
                 game.enterState(1, new FadeOutTransition(Color.black), new FadeInTransition(Color.black));
 
 
@@ -190,4 +195,3 @@ public class lose extends BasicGameState {
 
 
 }
-
